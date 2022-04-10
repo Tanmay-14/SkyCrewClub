@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+.flex_around_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex_around_col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex_txt_center{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4.2em 0;
+    text-align: center;
+}
+
+.flex_row_up{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/* section-1 */
+.sec_1{
+    padding: 20px 50px;
+}
+
+.sec_1 .box{
+    margin: 50px 80px;
+    padding: 0px 70px;
+    border: 2px solid #CCCCFF;
+    border-radius: 0px 30px;
+    background: linear-gradient(98.82deg, #FFFFFF -2.19%, #ECEDFF 101.8%);
+}
+
+.content h1{
+    font-size: 50px;
+    line-height: 70px;
+}
+
+.content h1 span{
+    font-weight: 900;
+    color: #5959f7;
+}
+
+.content p{
+    color: rgb(107, 111, 118);
+    width: 70%;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.015em;
+    padding-bottom: 20px;
+}
+
+/* section-2 */
+.title h1{
+    font-size: 50px;
+}
+
+.title span{
+    color: #9556D3;
+}
+
+.title p{
+    color: rgb(107, 111, 118);
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Section-2 Cards */
+.cards{
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 300px;
+    height: 500px;
+    padding: 30px 30px;
+    border-radius: 25px;
+    margin: 0 50px;
+    text-align: left;
+}
+
+.card:nth-child(odd){
+    background: linear-gradient(180deg, #805AD4 0%, #2A295A 107.05%);
+    color: #fff;
+}
+
+.card:nth-child(even){
+    background: linear-gradient(180deg, #FFB4E6 0%, #D2D2FF 110%);
+    color: #2D1A62;
+}
+
+.card .content{
+    padding: 0px 5px;
+}
+
+.card h3{
+    font-size: 26px;
+    line-height: 40px;
+    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.card span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* section-4 */
+.bg_1{
+    width: 100%;
+    background: url(../public/Triangles\ Overlay.png) no-repeat left bottom, linear-gradient(102.78deg, #251B8A -7.6%, #BD429C 105.08%);
+    padding: 50px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.left_content h1{
+    font-size: 50px;
+    margin-bottom: -20px;
+}
+
+.left_content p{
+    font-size: 25px;
+}
+
+.left_content ul {
+    padding-left: 0px;
+}
+
+.left_content ul li{
+    list-style: none;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+/* SECTION-5 */
+.content_hldr{
+    font-family: 'Open Sans', sans-serif;
+    margin: 8em 0;
+    width: 750px;
+    background: linear-gradient(98.82deg, #FFFFFF -2.19%, #ECEDFF 101.8%);
+    border: 2px solid #CCCCFF;
+    border-radius: 20px;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content_hldr h1{
+    font-size: 45px;
+    line-height: 65px;
+}
+
+.content_hldr p{
+    font-size: 20px;
+    padding: 0 80px;
+}
