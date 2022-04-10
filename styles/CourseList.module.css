@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.courseList{
+    font-family: 'Inter', sans-serif;
+    margin: 0 5em;
+    
+}
+
+.flex_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.courseList h3{
+    font-size: 24px;
+}

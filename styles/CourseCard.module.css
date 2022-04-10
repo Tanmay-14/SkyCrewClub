@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.courseCard{
+    width: 330px;
+    height: 530px;
+    border: 1px solid #e2e2e2; 
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s all ease;
+    margin-right: 1.5em
+}
+
+.courseCard:hover,
+.courseCard:focus{
+    transform: scale3d(1.03, 1.03, 5);
+}
+
+.img_hldr{
+    position: relative;
+    height: 270px;
+}
+
+.content{
+    padding: 1em 1.5em;
+}
+
+.courseTitle h2{
+    font-size: 24px;
+    line-height: 1em;
+    margin: 0 15px 0 0;
+
+}
+
+.courseBrief p{
+    font-size: 16px;
+    color: #888888;
+}
+
+.projectBut{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #111111;
+    background: none;
+    border-radius: 8px;
+    color: #111111;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+
+.projectBut:hover{
+    background-color: #e5f4ff;
+    text-decoration: underline;
+}
