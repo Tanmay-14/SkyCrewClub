@@ -3,7 +3,7 @@ import { connectToDatabase } from "../util/mongodb";
 export default function Jobs({ jobs }) {
   return (
     <div className="p-3">
-      <h1 className="font-light text-3xl decoration-red">JOBS</h1>
+      <h1 className="font-light text-3xl decoration-red">JOBS and Internship</h1>
       <ul>
         {jobs.map((job) => (
           <li>
