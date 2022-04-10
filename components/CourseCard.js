@@ -5,13 +5,13 @@ import Image from 'next/image'
 // useeffect to fetch the values from api or backend
 // after that loop ot in the CourseList File
 
-const CourseCard = ({img, title, desc}) => {
+const CourseCard = ({image, title, desc}) => {
   return (
     <div className={styles.courseCard}>
       <div className={styles.img_hldr}>
         <Image
+          src={image}
           className='courseImg'
-          src={img}
           alt='Course Img'
           layout='fill'
           objectFit='cover'
@@ -30,6 +30,7 @@ const CourseCard = ({img, title, desc}) => {
       </div>
     </div>
   )
+
 }
 
 export default CourseCard

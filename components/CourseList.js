@@ -1,6 +1,7 @@
 import CourseCard from './CourseCard'
 import styles from '../styles/CourseList.module.css'
-import SampleImage from '../public/courseCardImg.png'
+// import SampleImage from '../public/courseCardImg.png'
+import { CourseDummyData } from './CourseDummyData'
 
 const CourseList = () => {
   return (
@@ -8,17 +9,16 @@ const CourseList = () => {
         <div className={styles.courseList}>
             <h3>Exlpore Courses</h3>
             <div className={styles.flex_row}>
-                <CourseCard 
-                  img={SampleImage}
-                  title="Build a Whatsapp Clone using Reactjs + Firebase"
-                  desc="A 2-week project where you'll learn some React.js, write + host a chat app on firebase. Perfect for curious developers."
-                />
+                {CourseDummyData.slice(0,5).map(item =>{
+                  return(
+                    <CourseCard 
+                      image={item.image}
+                      title={item.title}
+                      desc={item.desc}
+                    />
+                  )
+                })}
 
-                <CourseCard 
-                  img={SampleImage}
-                  title="Build a Whatsapp Clone using Reactjs + Firebase"
-                  desc="A 2-week project where you'll learn some React.js, write + host a chat app on firebase. Perfect for curious developers."
-                />
             </div>
         </div>
     </>
