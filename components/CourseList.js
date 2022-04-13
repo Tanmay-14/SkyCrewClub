@@ -9,7 +9,7 @@ const CourseList = () => {
         <div className={styles.courseList}>
             <h3>Exlpore Courses</h3>
             <div className={styles.flex_row}>
-                {CourseDummyData.slice(0,5).map(item =>{
+                {CourseDummyData.slice(0,7).map(item =>{
                   return(
                     <CourseCard 
                       image={item.image}

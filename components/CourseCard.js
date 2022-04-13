@@ -19,7 +19,7 @@ const CourseCard = ({image, title, desc}) => {
       </div>
       <div className={styles.content}>
           <div className={styles.courseTitle}>
-            <h2>{title}</h2>
+            <h3> {title} </h3>
           </div>
           <div className={styles.courseBrief}>
             <p>{desc}</p>

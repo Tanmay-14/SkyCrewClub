@@ -21,11 +21,11 @@ const signup = () => {
                 </div>
                 <div className={styles.form}>
                     <input type="text" name="fname" autoComplete='off' required className={styles.input_form}/>
-                    <label className={styles.form_label}>first Name</label>
+                    <label className={styles.form_label}>first name</label>
                 </div>
                 <div className={styles.form}>
                     <input type="text" name="lname" autoComplete='off' required className={styles.input_form}/>
-                    <label className={styles.form_label}>last Name</label>
+                    <label className={styles.form_label}>last name</label>
                 </div>
                 <div className={styles.buttons}>
                     <button className={styles.learner}>

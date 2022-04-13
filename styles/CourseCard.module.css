@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 .courseCard{
-    width: 330px;
-    height: 530px;
+    max-width: 294px;
+    min-height: 470px;
     border: 1px solid #e2e2e2; 
     box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
     transition: 0.3s all ease;
-    margin-right: 1.5em
+    margin-right: 1.5em;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .courseCard:hover,
@@ -19,24 +20,42 @@
 
 .img_hldr{
     position: relative;
-    height: 270px;
+    height: 170px;
+    border-radius: 10px;
 }
 
 .content{
     padding: 1em 1.5em;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
 }
 
-.courseTitle h2{
-    height: 70px;
+.courseTitle h3{
+    height: 5rem;
     font-size: 24px;
     line-height: 1.1em;
     margin: 0 15px 0 0;
-
+    overflow: hidden;
+    line-height: 110%;
+    letter-spacing: -0.72px;
+    width: 230px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 .courseBrief p{
     font-size: 16px;
+    font-weight: 500;
+    line-height: 135%;
     color: #888888;
+    width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 .projectBut{
