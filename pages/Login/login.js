@@ -29,6 +29,7 @@ const login = () => {
                         </div>
                         </Link>
                         <div className={styles.line}>or</div>
+                        <Link href="/">
                         <div className={styles.connect}>
                             <button>
                                 <div className={styles.wallet}>
@@ -42,6 +43,7 @@ const login = () => {
                                 </div>
                             </button>
                         </div>
+                        </Link>
                         <div className={styles.signup}>
                             <p>create account?  
                                 <Link href='/Login/signup'>
