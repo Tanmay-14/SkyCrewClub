@@ -1,14 +1,15 @@
-import styles from '../../styles/Signup.module.css'
-import Image from 'next/image'
-import Learner from '../../public/student.png'
-import Educator from '../../public/teacher.png'
-import Link from 'next/Link'
-
+import styles from "../../styles/Signup.module.css";
+import Image from "next/image";
+import CheckBox from "../../public/check-square-fill.png";
+import Learner from "../../public/student.png";
+import Educator from "../../public/teacher.png";
+import Link from "next/Link";
+import { useState } from "react";
 
 const signup = () => {
   return (
-    <div className={styles.page_hldr}>
-        <div className={styles.form_hldr}>
+        <div className={styles.page_hldr}>
+            <div className={styles.form_hldr}>
             <Link href='/'>
                 <h1>SkyCrew</h1>
             </Link>
@@ -62,9 +63,9 @@ const signup = () => {
             <div className={styles.footer}>
                 <span>by continuing, you acknowledge that you have read, understood, <br /> and agree to our terms of service and privacy policy</span>
             </div>
-    </div>
-    </div>
+        </div>
+      </div>
   )
 }
 
-export default signup
+export default signup;
