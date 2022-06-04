@@ -26,7 +26,7 @@ const Navbar = () => {
           </li>
         </ul>
         <Link href="/Login/login">
-          <input type="submit" value="Connect" className={styles.btn} />
+          <input type="submit" value="Profile" className={styles.btn} />
         </Link>
       </div>
     </div>
