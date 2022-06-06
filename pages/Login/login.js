@@ -2,8 +2,17 @@ import CheckBox from "../../public/check-square-fill.png";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/Login.module.css";
+import { useMoralis } from "react-moralis";
 
-const login = () => {
+const Login = () => {
+  const {
+    authenticate,
+    isAuthenticated,
+    isAuthenticating,
+    user,
+    account,
+    logout
+  } = useMoralis();
   return (
     <div className={styles.page_hldr}>
       <div className={styles.form_hldr}>
@@ -15,7 +24,7 @@ const login = () => {
             <div className={styles.forms}>
               <Link href="/">
                 <div className={styles.connect}>
-                  <button>
+                  <button onClick={authenticate}>
                     <div className={styles.wallet}>
                       <Image
                         src={CheckBox}
@@ -42,4 +51,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

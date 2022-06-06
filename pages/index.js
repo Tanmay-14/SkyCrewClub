@@ -12,7 +12,6 @@ export default function Home() {
         <title>SkyCrew</title>
         <meta name="SkyCrew" content="Welcoem to SkyCrew | Home" />
       </Head>
-
       <Navbar />
       <Sections />
       <Footer />

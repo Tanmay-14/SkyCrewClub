@@ -14,7 +14,7 @@ const Sections = () => {
             <div className={`${styles.box} ${styles.flex_around_row}`}>
                 <div className={styles.content}>
                 <h1> <span>SkyRocket</span> your Skills <br /> by building <span>EPIC</span> Stuff.</h1>
-                <p>If you're an aspiring developer that wants to learn REACT, UI/UX, Web3 but is not sure where to start -- You are at the Right Spot. Learn + Start building cool stuff right now. Earn NFTs, Tokens, access Layered Work Opportunities.</p>
+                <p>If you&apos;re an aspiring developer that wants to learn REACT, UI/UX, Web3 but is not sure where to start -- You are at the Right Spot. Learn + Start building cool stuff right now. Earn NFTs, Tokens, access Layered Work Opportunities.</p>
                 </div>
 
                 <Image 
@@ -74,7 +74,7 @@ const Sections = () => {
             <div className={styles.flex_txt_center}>
             <div className={styles.title}>
                 <h1>Build alongside other <br /> <span> Developers & Designers.</span></h1>
-                <p>All Great things were built in TEAMS. Once you enroll we'll assign you a channel where <br /> you'll get to share progress with a plethora of skilled and talented professionals.</p>
+                <p>All Great things were built in TEAMS. Once you enroll we&apos;ll assign you a channel where <br /> you&apos;ll get to share progress with a plethora of skilled and talented professionals.</p>
             </div>
             </div>
         {/* </SECTION-3> */}
