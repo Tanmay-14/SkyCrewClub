@@ -1,20 +1,34 @@
-import Head from "next/head";
+
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Sections from "../components/Sections";
 import Footer from "../components/Footer";
 import NavbarConnected from "../components/NavbarConnected";
+import { useMoralis, useMoralisQuery } from "react-moralis";
+import Notlogin from "./notlogin";
+import HomeScreen from "./Homescreen";
 
 export default function Home() {
+  const {
+    authenticate,
+    isAuthenticated,
+    isAuthenticating,
+    user,
+    account,
+    logout
+  } = useMoralis();
+
   return (
     <div className={styles.container}>
-      <Head>
-        <title>SkyCrew</title>
-        <meta name="SkyCrew" content="Welcoem to SkyCrew | Home" />
-      </Head>
-      <Navbar />
-      <Sections />
-      <Footer />
+      {isAuthenticated ? (
+        <h1>
+          <HomeScreen />
+        </h1>
+      ) : (
+        <div>
+          <Notlogin />
+        </div>
+      )}
     </div>
   );
 }
