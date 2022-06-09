@@ -17,12 +17,9 @@ const Navbar = () => {
         <Link href="/">SkyCrew</Link>
       </div>
       <div className={styles.links}>
-        <input
-          type="submit"
-          onClick={logout}
-          value="Profile"
-          className={styles.btn}
-        />
+        <button onClick={logout} className={styles.btn}>
+          Profile
+        </button>
       </div>
     </div>
   );

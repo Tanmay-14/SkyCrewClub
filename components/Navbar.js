@@ -5,10 +5,7 @@ import { useMoralis } from "react-moralis";
 const Navbar = () => {
   const {
     authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
+
     logout
   } = useMoralis();
   return (
@@ -17,12 +14,9 @@ const Navbar = () => {
         <Link href="/">SkyCrew</Link>
       </div>
       <div className={styles.links}>
-        <input
-          type="submit"
-          onClick={authenticate}
-          value="Connect"
-          className={styles.btn}
-        />
+        <button onClick={authenticate} className={styles.btn}>
+          Connect
+        </button>
       </div>
     </div>
   );

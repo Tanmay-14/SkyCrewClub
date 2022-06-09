@@ -1,4 +1,3 @@
-
 import styles from "../styles/Home.module.css";
 import Navbar from "../components/Navbar";
 import Sections from "../components/Sections";
