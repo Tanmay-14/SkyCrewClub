@@ -8,7 +8,7 @@ const Notlogin = () => {
     <div>
       <Head>
         <title>SkyCrew</title>
-        <meta name="SkyCrew" content="Welcoem to SkyCrew | Home" />
+        <meta name="SkyCrew" content="Welcome to SkyCrew | Home" />
       </Head>
       <Navbar />
       <Sections />
