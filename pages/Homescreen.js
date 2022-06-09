@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const HomeScreen = () => {
   return (
-    <div>
+    <div style={{width : "100%"}}>
       <Head>
         <title>SkyCrew</title>
         <meta name="SkyCrew" content="Welcoem to SkyCrew | Home" />

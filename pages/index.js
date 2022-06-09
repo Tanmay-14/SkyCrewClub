@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {isAuthenticated ? (
-        <h1>
+
           <HomeScreen />
-        </h1>
+        
       ) : (
         <div>
           <Notlogin />
