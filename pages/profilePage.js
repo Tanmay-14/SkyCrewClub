@@ -46,6 +46,8 @@ function Profilepage() {
     reader.readAsDataURL(changeEvent.target.files[0]);
   }
 
+
+  // Edit Icon 
   const inputFileRef = useRef(null);
 
   const onFileChangeCapture = (e) => {
@@ -57,10 +59,47 @@ function Profilepage() {
     inputFileRef.current.click();
   };
 
+
+  // Liner and Username Preview using useState 
+  const [myStyle, setMyStyle] = useState({
+    backgroundColor: '#CBD5DF',
+    height: '1em',
+    width: '20em',
+    borderRadius: '1em'
+  })
+
+  const [myNameStyle, setMyNameStyle] = useState({
+    backgroundColor: '#CBD5DF',
+    height: '0.8em',
+    width: '20em',
+    borderRadius: '1em'
+  })
+
+  const [liner, setLiner] = useState();
+  const [userName, setUserName] = useState();
+  const handleUpdateLiner = (e)=>{
+    setLiner(e.target.value)
+    setMyStyle({
+      backgroundColor: 'white',
+      height: '1em',
+    })
+  }
+  const handleUpdateName = (e)=>{
+    setUserName(e.target.value)
+    setMyNameStyle({
+      backgroundColor: 'white',
+      height: '1em',
+    })
+  }
+
+
+
   return (
     <div className={styles.container}>
       <BackhomeNav />
       <div className={styles.profile_hldr}>
+
+        {/* Left Section  */}
         <div className={styles.left_side}>
           {/* Profile Section */}
           <div className={`${styles.card__hldr} ${styles.profile__section}`}>
@@ -104,6 +143,7 @@ function Profilepage() {
                     name="fname"
                     id="fname"
                     autoComplete="off"
+                    onChange={handleUpdateName}
                     required
                   />
                 </div>
@@ -129,6 +169,9 @@ function Profilepage() {
                   name="liner"
                   id="liner"
                   autoComplete="off"
+                  // value={liner}
+                  onChange={handleUpdateLiner}
+                  placeholder='Design, Innovate & Conquer'
                   required
                 />
               </div>
@@ -348,7 +391,23 @@ function Profilepage() {
           </div>
         </div>
 
-        <div className={styles.right_side}>Profile preview</div>
+
+        {/* Right Section  */}
+        <div className={styles.right_side}>
+          {/* Profile Preview Section  */}
+          <div className={`${styles.preview__section} ${styles.card__hldr}`}>
+           <h3>Profile Preview</h3>
+           {/* Preview Card  */}
+           <div className={`${styles.preview__card} ${styles.card__hldr}`}>
+              <div className={styles.prfile__hldr} style={{width: '50px', height: '50px', margin:'0', borderRadius:'50%'}} >
+                <img src={profileimg} />
+              </div>
+              <h3 style={myNameStyle}>{userName}</h3>
+              <p style={myStyle}>{liner}</p>
+           </div>
+           <button>Save</button>
+          </div>
+        </div>
       </div>
     </div>
   );
