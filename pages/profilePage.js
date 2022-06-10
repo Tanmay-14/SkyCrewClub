@@ -7,7 +7,7 @@ import LinkedIn from "../public/Linkedin.svg";
 import Dribble from "../public/Dribble.svg";
 import Behance from "../public/Behance.svg";
 import Website from "../public/website.svg";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import BackhomeNav from "../components/BackhomeNav";
 import { useMoralis } from "react-moralis";
 
@@ -21,7 +21,15 @@ function Profilepage() {
     logout
   } = useMoralis();
   const [imageSrc, setImageSrc] = useState();
+  const [username, setUsername] = useState();
+  const [userprofileimage, setUserprofileimage] = useState();
+  useEffect(() => {
+    if (!user) return null;
+    setUsername(user.get("username"));
+  }, [user]);
 
+  const profileimg = `https://avatars.dicebear.com/api/identicon/${username}.svg?b=%23f5f5f5&r=12&scale=82`;
+  console.log(profileimg);
   /**
    * handleOnChange
    * @description Triggers when the file input changes (ex: when a file is selected)
@@ -86,7 +94,7 @@ function Profilepage() {
             <div className={styles.input__info}>
               <div className={styles.first__info}>
                 <div className={styles.prfile__hldr}>
-                  
+                  <img src={profileimg} />
                 </div>
                 <div className={`${styles.input__form} ${styles.fname}`}>
                   <h4>First Name</h4>

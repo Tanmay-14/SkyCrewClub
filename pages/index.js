@@ -2,6 +2,8 @@ import styles from "../styles/Home.module.css";
 import { useMoralis, useMoralisQuery } from "react-moralis";
 import Notlogin from "./notlogin";
 import HomeScreen from "./Homescreen";
+import Loading from "../public/loading.svg";
+import Isloading from "./loading/isloading";
 
 export default function Home() {
   const {
@@ -17,6 +19,10 @@ export default function Home() {
     <div className={styles.container}>
       {isAuthenticated ? (
         <HomeScreen />
+      ) : isAuthenticating ? (
+        <div>
+          <Isloading />
+        </div>
       ) : (
         <div>
           <Notlogin />
