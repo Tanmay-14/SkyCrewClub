@@ -17,7 +17,7 @@ function JustConnect() {
           <h2>Connect Wallet</h2>
         </div>
         <p>
-          You'll earn NFTs and Tokens for completing stuff! Plus you'll need a
+          You&apos;ll earn NFTs and Tokens for completing stuff! Plus you&apos;ll need a
           wallet to work through the project material.
         </p>
 
