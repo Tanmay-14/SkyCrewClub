@@ -37,7 +37,6 @@ function Profilepage() {
   }, [user]);
 
   const profileimg = `https://avatars.dicebear.com/api/identicon/${currentuser}.svg?b=%23f5f5f5&r=12&scale=82`;
-  console.log(profileimg);
   /**
    * handleOnChange
    * @description Triggers when the file input changes (ex: when a file is selected)
