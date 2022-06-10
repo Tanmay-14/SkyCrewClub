@@ -11,6 +11,8 @@ const Profile = () => {
     account,
     logout
   } = useMoralis();
+
+
   return (
     <div>
       {isAuthenticated ? (

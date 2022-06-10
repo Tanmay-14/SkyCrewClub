@@ -12,24 +12,31 @@ import BackhomeNav from "../components/BackhomeNav";
 import { useMoralis } from "react-moralis";
 
 function Profilepage() {
-  const {
-    authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
-    logout
-  } = useMoralis();
+  const { user, account, logout } = useMoralis();
+
+  // variables for the profile page
   const [imageSrc, setImageSrc] = useState();
+  const [currentuser, setCurrentuser] = useState();
+
+  // variables for the edit profile page
   const [username, setUsername] = useState();
-  const [userprofileimage, setUserprofileimage] = useState();
+  const [email, setEmail] = useState();
+  const [bio, setBio] = useState();
+
+  const UpdateProfile = () => {
+    console.log("update profile");
+    console.log(username);
+    console.log(email);
+    console.log(bio);
+  };
+
+  // setting moealis data to variables
   useEffect(() => {
     if (!user) return null;
-    setUsername(user.get("username"));
+    setCurrentuser(user.get("username"));
   }, [user]);
 
-  const profileimg = `https://avatars.dicebear.com/api/identicon/${username}.svg?b=%23f5f5f5&r=12&scale=82`;
-  console.log(profileimg);
+  const profileimg = `https://avatars.dicebear.com/api/identicon/${currentuser}.svg?b=%23f5f5f5&r=12&scale=82`;
   /**
    * handleOnChange
    * @description Triggers when the file input changes (ex: when a file is selected)
@@ -140,7 +147,9 @@ function Profilepage() {
                   <input
                     className={styles.input}
                     type="text"
+                    onChange={(e) => setUsername(e.target.value)}
                     name="fname"
+                    placeholder={currentuser}
                     id="fname"
                     autoComplete="off"
                     onChange={handleUpdateName}
@@ -153,6 +162,7 @@ function Profilepage() {
                 <input
                   className={styles.input}
                   type="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   name="email"
                   id="email"
                   autoComplete="off"
@@ -167,6 +177,7 @@ function Profilepage() {
                   className={styles.input}
                   type="text"
                   name="liner"
+                  onChange={(e) => setBio(e.target.value)}
                   id="liner"
                   autoComplete="off"
                   // value={liner}
@@ -380,7 +391,9 @@ function Profilepage() {
               Connect your wallet to show off your NFTs and wallet activityn
             </p>
 
-            <button className={styles.add__but}>Connect Wallet</button>
+            <button className={styles.add__but} onClick={UpdateProfile}>
+              Update Profile
+            </button>
           </div>
 
           {/* Logout button */}
