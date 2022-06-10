@@ -86,11 +86,7 @@ function Profilepage() {
             <div className={styles.input__info}>
               <div className={styles.first__info}>
                 <div className={styles.prfile__hldr}>
-                  <img
-                    src={`https://avatars.dicebear.com/api/identicon/${user.get(
-                      "username"
-                    )}.svg?b=%23f2f2f2&scale=80&colorLevel=600&r=16`}
-                  />
+                  
                 </div>
                 <div className={`${styles.input__form} ${styles.fname}`}>
                   <h4>First Name</h4>
