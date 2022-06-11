@@ -19,7 +19,6 @@
   margin: 3em 0;
 }
 
-
 .profile_hldr h3,
 .profile_hldr h4,
 .profile_hldr h5,
@@ -71,6 +70,26 @@
   transition: 0.5s all ease;
 }
 
+.card__hldr .logout_btn {
+  width: 100%;
+  padding: 0.65em 1.25em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #fff;
+
+  letter-spacing: 0.005em;
+  background: #ff2c2c;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-top: 1em;
+  transition: 0.5s all ease;
+}
+.card__hldr .logout_btn:hover {
+  box-shadow: 0 0 11px rgba(255, 0, 0, 0.2);
+}
 .add__but:hover {
   box-shadow: 0 0 11px rgba(62, 62, 62, 0.2);
 }
@@ -135,13 +154,15 @@
   flex: 1;
 }
 
-::-webkit-input-placeholder { /* Edge */
+::-webkit-input-placeholder {
+  /* Edge */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.fname .input:-ms-input-placeholder { /* Internet Explorer */
+.fname .input:-ms-input-placeholder {
+  /* Internet Explorer */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -230,21 +251,19 @@
 }
 
 /* wallet  */
-.wallet__section span{
-  background-color: #9556D3;
+.wallet__section span {
+  background-color: #9556d3;
   color: #fff;
   border-radius: 1.5em;
   padding: 0.3em 1.2em;
 }
 
-.wallet__section p{
+.wallet__section p {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
 
 /* Right Section  */
 
@@ -254,8 +273,8 @@
   position: fixed;
 }
 
-.preview__section h3{
-  font-family: 'Montserrat';
+.preview__section h3 {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -263,25 +282,25 @@
   letter-spacing: 0.005em;
 }
 
-.preview__card{
-  margin: 2em 0 ;
+.preview__card {
+  margin: 2em 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.preview__card h3{
-  font-family: 'Montserrat';
+.preview__card h3 {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
-  line-height: 27px; 
+  line-height: 27px;
   letter-spacing: 0.005em;
   margin: 0.7em 0 0.3em 0;
 }
 
-.preview__card p{
-  font-family: 'Montserrat';
+.preview__card p {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 1em;
@@ -289,7 +308,7 @@
   letter-spacing: 0.005em;
 }
 
-.preview__section button{
+.preview__section button {
   background: rgb(107, 55, 255);
   border-radius: 10px;
   width: 100%;
@@ -302,7 +321,6 @@
   transition: 0.3s all ease;
 }
 
-.preview__section button:hover{
+.preview__section button:hover {
   box-shadow: 0 0 11px rgba(100, 44, 254, 0.749);
 }
-

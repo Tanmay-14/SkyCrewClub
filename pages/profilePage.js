@@ -1,15 +1,20 @@
 import styles from "../styles/Profile.module.css";
 import Edit from "../public/Edit Icon.svg";
 import Image from "next/image";
-import Github from "../public/Git.svg";
-import Twitter from "../public/Twitter.svg";
-import LinkedIn from "../public/Linkedin.svg";
-import Dribble from "../public/Dribble.svg";
-import Behance from "../public/Behance.svg";
-import Website from "../public/website.svg";
 import { useState, useRef, useEffect } from "react";
 import BackhomeNav from "../components/BackhomeNav";
 import { useMoralis } from "react-moralis";
+// icons
+
+import {
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiFillLinkedin,
+  AiOutlineDribbble,
+  AiOutlineBehance
+} from "react-icons/ai";
+
+import { VscGlobe } from "react-icons/vsc";
 
 function Profilepage() {
   const { user, account, logout, setUserData } = useMoralis();
@@ -276,12 +281,13 @@ function Profilepage() {
                 >
                   <div className={styles.text__flex}>
                     <div className={styles.img__hldr}>
-                      <Image
+                      {/* <Image
                         src={Github}
                         alt="Github Icon"
                         height={30}
                         width={30}
-                      />
+                      /> */}
+                      <AiFillGithub size={30} />
                     </div>
                     <h4>Github</h4>
                   </div>
@@ -301,12 +307,13 @@ function Profilepage() {
                 >
                   <div className={styles.text__flex}>
                     <div className={styles.img__hldr}>
-                      <Image
+                      {/* <Image
                         src={Twitter}
                         alt="Twitter Icon"
                         height={30}
                         width={30}
-                      />
+                      /> */}
+                      <AiOutlineTwitter size={30} />
                     </div>
                     <h4>Twitter</h4>
                   </div>
@@ -329,12 +336,13 @@ function Profilepage() {
                 >
                   <div className={styles.text__flex}>
                     <div className={styles.img__hldr}>
-                      <Image
+                      {/* <Image
                         src={LinkedIn}
                         alt="Linkedin Icon"
                         height={30}
                         width={30}
-                      />
+                      /> */}
+                      <AiFillLinkedin size={30} />
                     </div>
                     <h4>LinkedIn</h4>
                   </div>
@@ -354,12 +362,13 @@ function Profilepage() {
                 >
                   <div className={styles.text__flex}>
                     <div className={styles.img__hldr}>
-                      <Image
+                      {/* <Image
                         src={Website}
                         alt="Website Icon"
                         height={30}
                         width={30}
-                      />
+                      /> */}
+                      <VscGlobe size={30} />
                     </div>
                     <h4>Website</h4>
                   </div>
@@ -382,12 +391,14 @@ function Profilepage() {
                 >
                   <div className={styles.text__flex}>
                     <div className={styles.img__hldr}>
-                      <Image
+                      {/* <Image
                         src={Dribble}
                         alt="Dribble Icon"
                         height={30}
                         width={30}
-                      />
+                      /> */}
+
+                      <AiOutlineDribbble size={30} />
                     </div>
                     <h4>Dribble</h4>
                   </div>
@@ -407,12 +418,13 @@ function Profilepage() {
                 >
                   <div className={styles.text__flex}>
                     <div className={styles.img__hldr}>
-                      <Image
+                      {/* <Image
                         src={Behance}
                         alt="Behance Icon"
                         height={30}
                         width={30}
-                      />
+                      /> */}
+                      <AiOutlineBehance size={30} />
                     </div>
                     <h4>Behance</h4>
                   </div>
@@ -436,7 +448,7 @@ function Profilepage() {
               Eth Address: <span>{CurrentEthAddress}</span>
             </p>
 
-            <button className={styles.add__but} onClick={logout}>
+            <button className={styles.logout_btn} onClick={logout}>
               Logout
             </button>
           </div>
