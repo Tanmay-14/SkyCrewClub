@@ -11,10 +11,11 @@
 
 .profile_hldr {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 0 10em;
+  display: grid;
+  grid-template-columns: 55em 25em;
+  column-gap: 3em;
+  justify-content: center;
+  /* padding: 0 10em; */
   margin: 3em 0;
 }
 
@@ -28,12 +29,12 @@
 
 .left_side {
   /* flex: 1; */
-  min-width: 770px;
+  /* min-width: 770px; */
   font-family: "Montserrat", sans-serif;
 }
 
 .card__hldr {
-  min-width: 712px;
+  /* min-width: 712px; */
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -94,7 +95,7 @@
 
 .banner img {
   width: 100%;
-  max-width: 710px;
+  /* max-width: 710px; */
   height: 233px;
   border-radius: 10px;
   object-fit: cover;
@@ -132,6 +133,25 @@
 
 .fname {
   flex: 1;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fname .input:-ms-input-placeholder { /* Internet Explorer */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fname .input::placeholder {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  width: 50px;
 }
 
 .input__form {
@@ -209,6 +229,21 @@
   transition: 0.5s all ease;
 }
 
+/* wallet  */
+.wallet__section span{
+  background-color: #9556D3;
+  color: #fff;
+  border-radius: 1.5em;
+  padding: 0.3em 1.2em;
+}
+
+.wallet__section p{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 
 /* Right Section  */
@@ -216,6 +251,7 @@
 .right_side .preview__section {
   justify-content: center;
   align-items: center;
+  position: fixed;
 }
 
 .preview__section h3{
@@ -261,7 +297,7 @@
   color: #fff;
   border: none;
   outline: none;
-  font-size: 1.1em;
+  font-size: 1em;
   cursor: pointer;
   transition: 0.3s all ease;
 }
