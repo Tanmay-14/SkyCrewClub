@@ -67,19 +67,26 @@ function Profilepage() {
   };
 
 
+  // Basic variables for style 
+  const [myBgColor, setMyBgColor] = useState('#CBD5DF')
+  const [myHeight, setMyHeight] = useState('0.6em')
+  const [myWidth, setMyWidth] = useState('10em')
+  const [myRadius, setMyRadius] = useState('1em')
   // Liner and Username Preview using useState 
   const [myStyle, setMyStyle] = useState({
     backgroundColor: '#CBD5DF',
-    height: '1em',
-    width: '20em',
-    borderRadius: '1em'
+    height: '0.6em',
+    width: '10em',
+    borderRadius: '1em',
+    transition: '0.3s all ease'
   })
 
+  // UserName Style 
   const [myNameStyle, setMyNameStyle] = useState({
-    backgroundColor: '#CBD5DF',
-    height: '0.8em',
-    width: '20em',
-    borderRadius: '1em'
+    backgroundColor: `${myBgColor}`,
+    height: `${myHeight}`,
+    width: `${myWidth}`,
+    borderRadius:`${myRadius}` 
   })
 
   const [liner, setLiner] = useState();
@@ -88,16 +95,44 @@ function Profilepage() {
     setLiner(e.target.value)
     setMyStyle({
       backgroundColor: 'white',
-      height: '1em',
+      // height: '1em',
+      width: '15.5em',
+      textAlign: 'center',
+      transition: '0.3s all ease',
+      fontSize: '.8em'
     })
   }
+
+  useEffect(()=>{
+    if (userName){ 
+    console.log('filled username');
+    setMyBgColor('#fff');
+    setMyHeight('1.5em');
+    setMyWidth('14em');
+  }
+  else{
+    console.log('empty');
+    // setMyBgColor('#CBD5DF');
+    // setMyHeight('1.5em');
+    // setMyWidth('14em');
+  }}, [userName])
+
   const handleUpdateName = (e)=>{
     setUserName(e.target.value)
     setMyNameStyle({
-      backgroundColor: 'white',
-      height: '1em',
+      backgroundColor: `${myBgColor}`,
+      width: `${myWidth}`,
+      margin: '0.3em 0 0.3em 0',
+      textAlign: 'center',
+      transition: '0.2s all ease-in',
+      fontSize: '1em',
+      height: `${myHeight}`
     })
   }
+
+
+
+
 
 
 
@@ -115,7 +150,7 @@ function Profilepage() {
               You control your profile and can limit what is shown on search
               engines
             </p>
-
+            {/* Banner  */}
             <div className={styles.banner}>
               <form
                 className={styles.form}
@@ -132,11 +167,12 @@ function Profilepage() {
                 />
               </form>
               <div className={styles.edit__icon} onClick={onIconClick}>
-                {<Image src={Edit} alt="Player Image" width={50} height={50} />}
+                {<Image src={Edit} alt="Edit Image" width={50} height={50} />}
               </div>
               <img src={imageSrc} />
             </div>
 
+            {/* First Name  */}
             <div className={styles.input__info}>
               <div className={styles.first__info}>
                 <div className={styles.prfile__hldr}>
@@ -147,9 +183,9 @@ function Profilepage() {
                   <input
                     className={styles.input}
                     type="text"
-                    onChange={(e) => setUsername(e.target.value)}
+                    // onChange={(e) => setUsername(e.target.value)}
                     name="fname"
-                    placeholder={currentuser}
+                    // placeholder={currentuser}
                     id="fname"
                     autoComplete="off"
                     onChange={handleUpdateName}
@@ -177,7 +213,7 @@ function Profilepage() {
                   className={styles.input}
                   type="text"
                   name="liner"
-                  onChange={(e) => setBio(e.target.value)}
+                  // onChange={(e) => setBio(e.target.value)}
                   id="liner"
                   autoComplete="off"
                   // value={liner}
@@ -388,20 +424,20 @@ function Profilepage() {
           <div className={`${styles.card__hldr} ${styles.wallet__section}`}>
             <h3>Connect Wallet</h3>
             <p>
-              Connect your wallet to show off your NFTs and wallet activityn
+              Wallet Connected: <span>{currentuser}</span>
             </p>
 
             <button className={styles.add__but} onClick={UpdateProfile}>
-              Update Profile
+              Need to disconnect?
             </button>
           </div>
 
           {/* Logout button */}
-          <div className={styles.logout__section}>
+          {/* <div className={styles.logout__section}>
             <button className={styles.add__but} onClick={logout}>
               Logout
             </button>
-          </div>
+          </div> */}
         </div>
 
 
@@ -412,7 +448,7 @@ function Profilepage() {
            <h3>Profile Preview</h3>
            {/* Preview Card  */}
            <div className={`${styles.preview__card} ${styles.card__hldr}`}>
-              <div className={styles.prfile__hldr} style={{width: '50px', height: '50px', margin:'0', borderRadius:'50%'}} >
+              <div className={styles.prfile__hldr} style={{width: '40px', height: '40px', margin:'0', borderRadius:'50%'}} >
                 <img src={profileimg} />
               </div>
               <h3 style={myNameStyle}>{userName}</h3>
@@ -423,7 +459,8 @@ function Profilepage() {
         </div>
       </div>
     </div>
+    // </div>
   );
-}
+};
 
 export default Profilepage;
