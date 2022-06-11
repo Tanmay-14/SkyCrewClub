@@ -12,7 +12,8 @@ export default function Home() {
     isAuthenticating,
     user,
     account,
-    logout
+    logout,
+    error
   } = useMoralis();
 
   return (
