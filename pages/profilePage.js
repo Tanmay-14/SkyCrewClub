@@ -12,31 +12,41 @@ import BackhomeNav from "../components/BackhomeNav";
 import { useMoralis } from "react-moralis";
 
 function Profilepage() {
-  const { user, account, logout } = useMoralis();
+  const { user, account, logout, setUserData } = useMoralis();
+
+  // profile fetch and update
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
+
+  const [Currentusername, setCurrentusername] = useState();
+  const [Currentemail, setCurrentemail] = useState();
+  const [Currentbio, setCurrentbio] = useState();
+
+  // push to moralis
+  const UpdateProfile = () => {
+    console.log("profile updated");
+    setUserData({
+      username: username,
+      email: email,
+      bio: bio
+    });
+  };
+
+  // console.log(Currentemail);
+  useEffect(() => {
+    if (!user) return null;
+    setCurrentusername(user.get("username"));
+    setCurrentemail(user.get("email"));
+    setCurrentbio(user.get("bio"));
+  }, [user]);
+
+  // profile fetch and update
 
   // variables for the profile page
   const [imageSrc, setImageSrc] = useState();
-  const [currentuser, setCurrentuser] = useState();
 
-  // variables for the edit profile page
-  const [username, setUsername] = useState();
-  const [email, setEmail] = useState();
-  const [bio, setBio] = useState();
-
-  const UpdateProfile = () => {
-    console.log("update profile");
-    console.log(username);
-    console.log(email);
-    console.log(bio);
-  };
-
-  // setting moealis data to variables
-  useEffect(() => {
-    if (!user) return null;
-    setCurrentuser(user.get("username"));
-  }, [user]);
-
-  const profileimg = `https://avatars.dicebear.com/api/identicon/${currentuser}.svg?b=%23f5f5f5&r=12&scale=82`;
+  const profileimg = `https://avatars.dicebear.com/api/identicon/${Currentusername}.svg?b=%23f5f5f5&r=12&scale=82`;
   /**
    * handleOnChange
    * @description Triggers when the file input changes (ex: when a file is selected)
@@ -53,8 +63,7 @@ function Profilepage() {
     reader.readAsDataURL(changeEvent.target.files[0]);
   }
 
-
-  // Edit Icon 
+  // Edit Icon
   const inputFileRef = useRef(null);
 
   const onFileChangeCapture = (e) => {
@@ -66,46 +75,42 @@ function Profilepage() {
     inputFileRef.current.click();
   };
 
-
-  // Liner and Username Preview using useState 
+  // Liner and Username Preview using useState
   const [myStyle, setMyStyle] = useState({
-    backgroundColor: '#CBD5DF',
-    height: '1em',
-    width: '20em',
-    borderRadius: '1em'
-  })
+    backgroundColor: "#CBD5DF",
+    height: "1em",
+    width: "20em",
+    borderRadius: "1em"
+  });
 
   const [myNameStyle, setMyNameStyle] = useState({
-    backgroundColor: '#CBD5DF',
-    height: '0.8em',
-    width: '20em',
-    borderRadius: '1em'
-  })
+    backgroundColor: "#CBD5DF",
+    height: "0.8em",
+    width: "20em",
+    borderRadius: "1em"
+  });
 
   const [liner, setLiner] = useState();
   const [userName, setUserName] = useState();
-  const handleUpdateLiner = (e)=>{
-    setLiner(e.target.value)
+  const handleUpdateLiner = (e) => {
+    setLiner(e.target.value);
     setMyStyle({
-      backgroundColor: 'white',
-      height: '1em',
-    })
-  }
-  const handleUpdateName = (e)=>{
-    setUserName(e.target.value)
+      backgroundColor: "white",
+      height: "1em"
+    });
+  };
+  const handleUpdateName = (e) => {
+    setUserName(e.target.value);
     setMyNameStyle({
-      backgroundColor: 'white',
-      height: '1em',
-    })
-  }
-
-
+      backgroundColor: "white",
+      height: "1em"
+    });
+  };
 
   return (
     <div className={styles.container}>
       <BackhomeNav />
       <div className={styles.profile_hldr}>
-
         {/* Left Section  */}
         <div className={styles.left_side}>
           {/* Profile Section */}
@@ -143,16 +148,17 @@ function Profilepage() {
                   <img src={profileimg} />
                 </div>
                 <div className={`${styles.input__form} ${styles.fname}`}>
-                  <h4>First Name</h4>
+                  <h4>UserName</h4>
                   <input
                     className={styles.input}
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
                     name="fname"
-                    placeholder={currentuser}
+                    defaultValue={Currentusername}
+                    placeholder="Current User Name"
                     id="fname"
                     autoComplete="off"
-                    onChange={handleUpdateName}
+                    // onChange={handleUpdateName}
                     required
                   />
                 </div>
@@ -164,6 +170,8 @@ function Profilepage() {
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                   name="email"
+                  defaultValue={Currentemail}
+                  placeholder="current email"
                   id="email"
                   autoComplete="off"
                   required
@@ -179,10 +187,12 @@ function Profilepage() {
                   name="liner"
                   onChange={(e) => setBio(e.target.value)}
                   id="liner"
+                  defaultValue={Currentbio}
+                  placeholder="current bio"
                   autoComplete="off"
                   // value={liner}
-                  onChange={handleUpdateLiner}
-                  placeholder='Design, Innovate & Conquer'
+                  // onChange={handleUpdateLiner}
+
                   required
                 />
               </div>
@@ -404,21 +414,28 @@ function Profilepage() {
           </div>
         </div>
 
-
         {/* Right Section  */}
         <div className={styles.right_side}>
           {/* Profile Preview Section  */}
           <div className={`${styles.preview__section} ${styles.card__hldr}`}>
-           <h3>Profile Preview</h3>
-           {/* Preview Card  */}
-           <div className={`${styles.preview__card} ${styles.card__hldr}`}>
-              <div className={styles.prfile__hldr} style={{width: '50px', height: '50px', margin:'0', borderRadius:'50%'}} >
+            <h3>Profile Preview</h3>
+            {/* Preview Card  */}
+            <div className={`${styles.preview__card} ${styles.card__hldr}`}>
+              <div
+                className={styles.prfile__hldr}
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  margin: "0",
+                  borderRadius: "50%"
+                }}
+              >
                 <img src={profileimg} />
               </div>
-              <h3 style={myNameStyle}>{userName}</h3>
-              <p style={myStyle}>{liner}</p>
-           </div>
-           <button>Save</button>
+              <h3>{Currentusername}</h3>
+              <p>{Currentbio}</p>
+            </div>
+            <button>Save</button>
           </div>
         </div>
       </div>
