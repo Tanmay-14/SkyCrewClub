@@ -13,8 +13,10 @@ import {
   AiOutlineDribbble,
   AiOutlineBehance
 } from "react-icons/ai";
-
 import { VscGlobe } from "react-icons/vsc";
+
+//UI
+import { Input } from "@nextui-org/react";
 
 function Profilepage() {
   const { user, account, logout, setUserData } = useMoralis();
@@ -36,10 +38,20 @@ function Profilepage() {
       username: username,
       email: email,
       bio: bio
+    }).catch(function (error) {
+      console.log(error);
     });
   };
 
-  // console.log(Currentemail);
+  // check if bio is blank or not
+  const checkbio = () => {
+    if (user.get("bio") === "") {
+      alert("Please update your profile");
+    } else {
+      alert("Bio already updated");
+    }
+  };
+
   useEffect(() => {
     if (!user) return null;
     setCurrentusername(user.get("username"));
@@ -247,6 +259,19 @@ function Profilepage() {
                   required
                 />
               </div>
+              <div className={`${styles.input__form} ${styles.loc__input}`}>
+                <h4>Test</h4>
+
+                <Input
+                  bordered
+                  animated={false}
+                  fullWidth={true}
+                  clearable
+                  rounded={false}
+                  shadow={false}
+                  css={{}}
+                />
+              </div>
             </div>
           </div>
 
@@ -255,7 +280,9 @@ function Profilepage() {
             <h3>Work Experience</h3>
             <p>Let us know where you worked in the past!</p>
 
-            <button className={styles.add__but}>Add Experience</button>
+            <button className={styles.add__but} onClick={checkbio}>
+              Add Experience
+            </button>
           </div>
 
           {/* Project Section  */}
@@ -287,7 +314,7 @@ function Profilepage() {
                         height={30}
                         width={30}
                       /> */}
-                      <AiFillGithub size={30} />
+                      <AiFillGithub size={30} color="#171515" />
                     </div>
                     <h4>Github</h4>
                   </div>
@@ -313,7 +340,7 @@ function Profilepage() {
                         height={30}
                         width={30}
                       /> */}
-                      <AiOutlineTwitter size={30} />
+                      <AiOutlineTwitter size={30} color="#00acee" />
                     </div>
                     <h4>Twitter</h4>
                   </div>
@@ -342,7 +369,7 @@ function Profilepage() {
                         height={30}
                         width={30}
                       /> */}
-                      <AiFillLinkedin size={30} />
+                      <AiFillLinkedin size={30} color="#0072b1" />
                     </div>
                     <h4>LinkedIn</h4>
                   </div>
@@ -368,7 +395,7 @@ function Profilepage() {
                         height={30}
                         width={30}
                       /> */}
-                      <VscGlobe size={30} />
+                      <VscGlobe size={30} color="#AA3CE3" />
                     </div>
                     <h4>Website</h4>
                   </div>
@@ -398,7 +425,7 @@ function Profilepage() {
                         width={30}
                       /> */}
 
-                      <AiOutlineDribbble size={30} />
+                      <AiOutlineDribbble size={30} color="#ea4c89" />
                     </div>
                     <h4>Dribble</h4>
                   </div>
@@ -424,7 +451,7 @@ function Profilepage() {
                         height={30}
                         width={30}
                       /> */}
-                      <AiOutlineBehance size={30} />
+                      <AiOutlineBehance size={30} color="#053eff" />
                     </div>
                     <h4>Behance</h4>
                   </div>

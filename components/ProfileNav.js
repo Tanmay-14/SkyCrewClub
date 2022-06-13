@@ -1,8 +1,9 @@
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { useMoralis } from "react-moralis";
+import Profilebtn from "./Profilebtn";
 
-const Navbar = () => {
+const Profilenav = () => {
   const {
     authenticate,
     isAuthenticated,
@@ -18,12 +19,17 @@ const Navbar = () => {
       </div>
       <div className={styles.links}>
         <Link href="profile">
-          <button className={styles.btn}>Profile</button>
+          <button className={styles.probtn}>
+            <img
+              src="https://avatars.dicebear.com/api/identicon/varad.svg?b=%23f5f5f5&r=12&scale=82"
+              alt="profile"
+            />
+            Profile
+          </button>
         </Link>
-        
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default Profilenav;
