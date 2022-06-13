@@ -1,7 +1,7 @@
 {
   "name": "skycrewclub",
-  "description": "Welcoem to the Skycrew Club!",
-  "version": "0.1.0",
+  "description": "If you're an aspiring developer that wants to learn REACT, UI/UX, Web3 but is not sure where to start -- You are at the Right Spot. Learn + Start building cool stuff right now. Earn NFTs, Tokens, access Layered Work Opportunities.",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
