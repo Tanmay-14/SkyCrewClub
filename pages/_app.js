@@ -1,14 +1,29 @@
-import "../styles/globals.css";
-import { MoralisProvider } from "react-moralis";
+import {
+  createClient,
+  configureChains,
+  defaultChains,
+  WagmiConfig
+} from "wagmi";
+import { publicProvider } from "wagmi/providers/public";
+import { SessionProvider } from "next-auth/react";
+
+const { provider, webSocketProvider } = configureChains(defaultChains, [
+  publicProvider()
+]);
+
+const client = createClient({
+  provider,
+  webSocketProvider,
+  autoConnect: true
+});
 
 function MyApp({ Component, pageProps }) {
   return (
-    <MoralisProvider
-      serverUrl="https://q8c2clh9fth0.usemoralis.com:2053/server"
-      appId="bx0gDuIUII0pLYbf1HgpXdN6Jv0Z60oQK4DSnLO8"
-    >
-      <Component {...pageProps} />
-    </MoralisProvider>
+    <WagmiConfig client={client}>
+      <SessionProvider session={pageProps.session} refetchInterval={0}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </WagmiConfig>
   );
 }
 
